@@ -1,5 +1,9 @@
+import sys
+
 import numpy as np
 import pandas as pd
+
+from validation import DataValidationError, validate_inventory
 
 PLANNING_DAYS = 30  # target stock covers this many days of demand
 
@@ -59,6 +63,7 @@ def save_report(df, path):
 
 def run(input_path="data/inventory.csv", output_path="reports/reorder_report.csv"):
     df = load_data(input_path)
+    validate_inventory(df)
     df = calculate_metrics(df)
     df = classify_status(df)
     df = calculate_orders(df)
@@ -68,6 +73,16 @@ def run(input_path="data/inventory.csv", output_path="reports/reorder_report.csv
 
 
 if __name__ == "__main__":
-    report = run()
+    input_path = sys.argv[1] if len(sys.argv) > 1 else "data/inventory.csv"
+    try:
+        report = run(input_path)
+    except FileNotFoundError:
+        print(f"ERROR: input file not found: {input_path}")
+        sys.exit(1)
+    except DataValidationError as error:
+        print("DATA VALIDATION FAILED - no report was written.")
+        print(error)
+        sys.exit(1)
+
     print(report["status"].value_counts())
     print("Total estimated purchase cost:", round(report["est_cost"].sum(), 2))

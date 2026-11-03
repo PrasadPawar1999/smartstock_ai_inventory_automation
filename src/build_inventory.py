@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
 
+
+
 rng = np.random.default_rng(42)  # fixed seed = same result every run
 
 df = pd.read_csv("data/products.csv")
