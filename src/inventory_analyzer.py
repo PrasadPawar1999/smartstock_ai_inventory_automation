@@ -47,6 +47,27 @@ def calculate_orders(df):
     return df
 
 
+def add_abc_class(df):
+    """ABC classification by annual consumption value (daily demand x 365 x unit cost).
+
+    A = products making up the first 80% of total value, B = the next 15%, C = the rest.
+    A product is A if the value ranked above it is still under 80% of the total.
+    """
+    df = df.copy()
+    df["annual_value"] = df["daily_demand"] * 365 * df["unit_cost"]
+
+    ranked = df.sort_values(["annual_value", "product_id"], ascending=[False, True])
+    total = ranked["annual_value"].sum()
+    if total == 0:
+        df["abc_class"] = "C"
+        return df
+
+    share_before = (ranked["annual_value"].cumsum() - ranked["annual_value"]) / total
+    ranked["abc_class"] = np.select([share_before < 0.80, share_before < 0.95], ["A", "B"], default="C")
+    df["abc_class"] = ranked["abc_class"]  # lines up by row index
+    return df
+
+
 def sort_by_priority(df):
     """URGENT first, then REORDER, then OK. Within a status, least days of cover first."""
     rank = {"URGENT": 0, "REORDER": 1, "OK": 2}
@@ -67,6 +88,7 @@ def run(input_path="data/inventory.csv", output_path="reports/reorder_report.csv
     df = calculate_metrics(df)
     df = classify_status(df)
     df = calculate_orders(df)
+    df = add_abc_class(df)
     df = sort_by_priority(df)
     save_report(df, output_path)
     return df
