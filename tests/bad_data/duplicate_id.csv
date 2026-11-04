@@ -1,0 +1,22 @@
+product_id,product_name,category,supplier,stock,on_order,daily_demand,lead_time_days,safety_stock,unit_cost,moq,reorder_level_given,expiration_date
+29-017-6255,Fruits item 001,Fruits & Vegetables,FreshFarm Co,0,0,3.5,3,7,4.6,10,64,31-01-2025
+79-569-8856,Oils item 002,Oils & Fats,GoldPress Oils,0,0,2.9,12,3,2.0,48,87,11-06-2024
+28-146-2641,Dairy item 003,Dairy,MilkWay Foods,0,0,3.9,4,8,12.0,24,67,08-04-2024
+11-581-9869,Fruits item 004,Fruits & Vegetables,FreshFarm Co,51,0,0.0,3,8,1.5,10,60,26-09-2024
+13-202-4809,Fruits item 005,Fruits & Vegetables,FreshFarm Co,27,0,0.0,3,4,7.0,10,22,20-05-2024
+70-145-2550,Fruits item 006,Fruits & Vegetables,GreenValley Produce,91,20,4.6,5,10,2.4,20,6,06-08-2024
+10-626-8536,Grains item 007,Grains & Pulses,AgriGrain Ltd,17,0,5.4,10,11,5.0,50,85,30-03-2024
+42-879-9478,Seafood item 008,Seafood,BlueWave Seafood,81,0,5.6,7,17,10.0,20,22,22-08-2024
+82-380-5378,Dairy item 009,Dairy,DairyDirect,78,36,3.3,2,4,9.0,12,24,07-03-2024
+23-265-8144,Dairy item 010,Dairy,DairyDirect,55,0,3.4,2,7,1.7,12,50,25-10-2024
+62-393-9939,Dairy item 011,Dairy,MilkWay Foods,60,0,4.9,4,15,9.0,24,9,05-10-2024
+90-343-9640,Oils item 012,Oils & Fats,GoldPress Oils,53,0,2.2,12,3,10.0,48,89,06-10-2024
+36-899-5324,Fruits item 013,Fruits & Vegetables,GreenValley Produce,94,0,5.1,5,16,2.9,20,58,19-12-2024
+41-538-3129,Bakery item 014,Bakery,CrustMasters,77,0,3.2,3,10,4.0,20,79,31-07-2024
+47-843-8207,Fruits item 015,Fruits & Vegetables,GreenValley Produce,34,0,1.1,5,4,2.5,20,92,27-12-2024
+94-071-2261,Fruits item 016,Fruits & Vegetables,GreenValley Produce,79,60,0.9,5,2,4.5,20,37,30-03-2024
+12-998-3882,Dairy item 017,Dairy,MilkWay Foods,76,0,5.1,4,16,2.5,24,54,26-05-2024
+36-127-4273,Dairy item 018,Dairy,DairyDirect,50,0,0.8,2,3,6.2,12,46,31-07-2024
+13-144-2169,Fruits item 019,Fruits & Vegetables,GreenValley Produce,25,40,2.0,5,6,3.0,20,62,07-09-2024
+86-978-6666,Grains item 020,Grains & Pulses,AgriGrain Ltd,38,0,2.3,10,5,2.7,50,43,15-09-2024
+29-017-6255,Fruits item 001,Fruits & Vegetables,FreshFarm Co,0,0,3.5,3,7,4.6,10,64,31-01-2025
